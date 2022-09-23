@@ -27,9 +27,20 @@ proto_library(
     srcs = ["helloworld.proto"],
 )
 
+
+proto_library(
+    name = "ot_proto",
+    srcs = ["ot.proto"],
+)
+
 cc_proto_library(
     name = "helloworld_cc_proto",
     deps = [":helloworld_proto"],
+)
+
+cc_proto_library(
+    name = "ot_cc_proto",
+    deps = [":ot_proto"],
 )
 
 cc_grpc_library(
