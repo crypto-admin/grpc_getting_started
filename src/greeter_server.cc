@@ -23,9 +23,9 @@
 #include <grpcpp/grpcpp.h>
 
 #ifdef BAZEL_BUILD
-#include "helloworld.grpc.pb.h"
+#include "src/proto/helloworld.grpc.pb.h"
 #else
-#include "helloworld.grpc.pb.h"
+#include "src/proto/helloworld.grpc.pb.h"
 #endif
 
 using grpc::Server;
