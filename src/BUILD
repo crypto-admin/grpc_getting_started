@@ -44,3 +44,28 @@ cc_binary(
         "@com_github_grpc_grpc//:grpc++",
     ],
 )
+
+
+cc_binary(
+    name = "psiServer",
+    srcs = ["psiServer.cc"],
+    defines = ["BAZEL_BUILD"],
+    deps = [
+        "//src/proto:helloworld_cc_grpc",
+        "//src/proto:ot_cc_grpc",
+        # http_archive made this label available for binding
+        "@com_github_grpc_grpc//:grpc++",
+    ],
+)
+
+cc_binary(
+    name = "psiClient",
+    srcs = ["psiClient.cc"],
+    defines = ["BAZEL_BUILD"],
+    deps = [
+        "//src/proto:helloworld_cc_grpc",
+        "//src/proto:ot_cc_grpc",
+        # http_archive made this label available for binding
+        "@com_github_grpc_grpc//:grpc++",
+    ],
+)

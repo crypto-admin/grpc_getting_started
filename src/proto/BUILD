@@ -50,3 +50,9 @@ cc_grpc_library(
     deps = [":helloworld_cc_proto"],
 )
 
+cc_grpc_library(
+    name = "ot_cc_grpc",
+    srcs = [":ot_proto"],
+    grpc_only = True,
+    deps = [":ot_cc_proto"],
+)
